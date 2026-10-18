@@ -260,6 +260,7 @@ const EXPERIENCE = [{
 }];
 const PROJECTS = [{
   name: "SkogsNallen",
+  screenshot: "https://raw.githubusercontent.com/Darougah/SkogsNallen/main/docs/screens/home.png",
   description: "An online toy shop with a product catalogue, shopping cart, and checkout — built to feel easy to browse, not just functional.",
   tag: "JavaScript",
   url: "https://github.com/Darougah/SkogsNallen",
@@ -300,7 +301,7 @@ const EDUCATION = [{
   school: "Rudbecks Gymnasium",
   period: "Aug 2003 – Jun 2006"
 }];
-const CERTIFICATIONS = ["Apple Certified Macintosh Technician (ACMT), 2011", "CompTIA A+, 2011", "Mac / OS X service & troubleshooting courses, 2011–2013"];
+const CERTIFICATIONS = ["Apple Certified Macintosh Technician (ACMT), 2011", "CompTIA A+ Course, 2011", "Mac / OS X service & troubleshooting courses, 2011–2013"];
 const NAV = [{
   id: "about",
   label: "About"
@@ -623,6 +624,7 @@ const MOCKUPS = {
 function ProjectPreview({
   project
 }) {
+  if (project.screenshot) return React.createElement("a", { href: project.liveUrl || project.url, target: "_blank", rel: "noreferrer", className: "block w-full rounded-xl overflow-hidden mb-4", style: {height: "160px", border: `1px solid ${COLORS.line}`} }, React.createElement("img", {src: project.screenshot, alt: `${project.name} application screenshot`, loading: "lazy", className: "w-full h-full object-cover object-top"}));
   const Mockup = MOCKUPS[project.name];
   return /*#__PURE__*/React.createElement("div", {
     className: "relative w-full rounded-xl overflow-hidden mb-4",
